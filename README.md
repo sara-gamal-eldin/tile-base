@@ -1,4 +1,3 @@
-[README.md](https://github.com/user-attachments/files/29657790/README.md)
 # TileBase
 
 Cloud-native geospatial pipeline — drop a data URL, get GeoParquet, PMTiles, XYZ tiles, and a STAC catalog instantly.

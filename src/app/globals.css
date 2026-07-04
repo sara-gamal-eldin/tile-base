@@ -1,0 +1,135 @@
+@import "tailwindcss";
+
+:root {
+  --bg-base:        #F1F5F9;
+  --bg-panel:       #FFFFFF;
+  --bg-raised:      #F8FAFC;
+  --border:         #E2E8F0;
+  --border-mid:     #CBD5E1;
+  --text-primary:   #0F172A;
+  --text-secondary: #475569;
+  --text-muted:     #94A3B8;
+  --accent:         #2563EB;
+  --accent-light:   #EFF6FF;
+  --accent-glow:    rgba(37,99,235,0.1);
+  --accent-hover:   #1D4ED8;
+  --success:        #10B981;
+  --error:          #EF4444;
+  --warning:        #F59E0B;
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md:      0 4px 16px rgba(0,0,0,0.08);
+  --font-sans:      var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mono:      var(--font-mono-jb), 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+[data-theme="dark"] {
+  --bg-base:        #080E1A;
+  --bg-panel:       #0D1526;
+  --bg-raised:      #111E35;
+  --border:         #1A2A42;
+  --border-mid:     #213352;
+  --text-primary:   #E4EDFF;
+  --text-secondary: #7A9BC4;
+  --text-muted:     #3D5A7A;
+  --accent:         #3B82F6;
+  --accent-light:   rgba(59,130,246,0.13);
+  --accent-glow:    rgba(59,130,246,0.2);
+  --accent-hover:   #2563EB;
+  --success:        #10B981;
+  --error:          #EF4444;
+  --warning:        #F59E0B;
+  --shadow-sm:      0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md:      0 4px 20px rgba(0,0,0,0.5);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+  background: var(--bg-base);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 13px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border-mid); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text-muted); }
+
+/* ── MapLibre popup overrides (light theme) ─────────────────────────────── */
+.maplibregl-popup-content {
+  padding: 0 !important;
+  background: #FFFFFF !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.14) !important;
+  border-radius: 10px !important;
+  border: 1px solid #E2E8F0 !important;
+}
+.maplibregl-popup-tip {
+  border-top-color: #E2E8F0 !important;
+}
+
+/* ── MapLibre navigation control (light theme) ──────────────────────────── */
+.maplibregl-ctrl-group {
+  background: #FFFFFF !important;
+  border: 1px solid #E2E8F0 !important;
+  border-radius: 8px !important;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm) !important;
+}
+.maplibregl-ctrl-group button {
+  color: var(--text-secondary) !important;
+  width: 32px !important;
+  height: 32px !important;
+  background: transparent !important;
+}
+.maplibregl-ctrl-group button:hover {
+  background: var(--accent-light) !important;
+  color: var(--accent) !important;
+}
+.maplibregl-ctrl-attrib {
+  background: rgba(255,255,255,0.85) !important;
+  color: var(--text-muted) !important;
+  font-size: 10px !important;
+  backdrop-filter: blur(8px);
+  border-radius: 6px !important;
+  border: 1px solid var(--border) !important;
+}
+.maplibregl-ctrl-attrib a { color: var(--text-secondary) !important; }
+
+/* ── MapLibre dark theme overrides ─────────────────────────────────────── */
+[data-theme="dark"] .maplibregl-popup-content {
+  background: #0D1526 !important;
+  border-color: #1A2A42 !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5) !important;
+}
+[data-theme="dark"] .maplibregl-popup-tip {
+  border-top-color: #1A2A42 !important;
+}
+[data-theme="dark"] .maplibregl-ctrl-group {
+  background: #0D1526 !important;
+  border-color: #1A2A42 !important;
+}
+[data-theme="dark"] .maplibregl-ctrl-attrib {
+  background: rgba(13,21,38,0.85) !important;
+  border-color: #1A2A42 !important;
+}
+
+/* ── Animations ─────────────────────────────────────────────────────────── */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}

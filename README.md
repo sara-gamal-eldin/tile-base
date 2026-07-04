@@ -100,5 +100,3 @@ src/
 ```
 
 ---
-
-## Built by [Geosolvix](https://geosolvix.com)
